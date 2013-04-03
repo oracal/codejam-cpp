@@ -1,6 +1,5 @@
 #include <fstream>
 #include <iostream>
-#include <string>
 
 void processAllCases(std::istream &is, std::ostream &os);
 void processCase(const int iteration, std::istream &is, std::ostream &os);
