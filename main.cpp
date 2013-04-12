@@ -1,5 +1,14 @@
 #include <fstream>
 #include <iostream>
+#include <vector>
+#include <map>
+#include <string>
+#include <sstream>
+
+// Usage:
+// cat input.txt | ./main > output.txt
+// ./main input.txt > output.txt
+// ./main input.txt output.txt
 
 void processAllCases(std::istream &is, std::ostream &os);
 void processCase(const int iteration, std::istream &is, std::ostream &os);
@@ -17,6 +26,7 @@ int main(int argc, char *argv[]) {
         case 2:
             fin.open(argv[1]);
             is = &fin;
+            os = &std::cout;
             break;
         case 3:
             fin.open(argv[1]);
@@ -25,7 +35,11 @@ int main(int argc, char *argv[]) {
             os = &fout;
             break;
         default:
-            std::cout << "Usage:\ncat input.txt | ./main > output.txt\n./main input.txt > output.txt\n./main input.txt output.txt" << std::endl;
+            std::cout
+                << "Usage:" << std::endl
+                << "cat input.txt | ./main > output.txt" << std::endl
+                << "./main input.txt > output.txt" << std::endl
+                << "./main input.txt output.txt" << std::endl;
             return 1;
     }
     processAllCases(*is, *os);
